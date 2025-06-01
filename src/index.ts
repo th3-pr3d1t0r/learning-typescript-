@@ -30,21 +30,29 @@
 
 // // console.log(mySize);
 
-let userIncome : string | null = prompt("how much do you make a year")//
+// let userIncome : string | null = prompt("how much do you make a year")//
 
-let taxYear :number |null = prompt("what year is this income from") 
+// // let taxYear :number |null = prompt("what year is this income from") 
 
-function calculateTax(income:number, taxYear = 2021){ // you can alls specify the type of the 
-    if (income > 50000){
-        const taxedIncome :number = (income * 10 ) / 100 
-        const product :string = taxedIncome.toString() + taxYear.toString
-        return product;
+// function calculateTax(income:number, taxYear = 2021){ // you can alls specify the type of the 
+//     if (income > 50000){
+//         const taxedIncome :number = (income * 10 ) / 100 
+//         const product :string = taxedIncome.toString() + taxYear.toString
+//         return product;
 
-    }else{
-        return (income * 5) /100 & taxYear;
-    }
+//     }else{
+//         return (income * 5) /100 & taxYear;
+//     }
 
-}
+// }
 
 
-calculateTax(userIncome,userYear);
+// calculateTax(userIncome,userYear);
+
+
+function calculateRectangleArea(length:number , breadth:number):number{
+    return length * breadth
+
+};
+
+calculateRectangleArea(5,4);// function calculates the area of a rectangle 
