@@ -51,8 +51,22 @@
 
 
 function calculateRectangleArea(length:number , breadth:number):number{
-    return length * breadth
+    let area = length * breadth
+    return  area;
 
 };
 
 calculateRectangleArea(5,4);// function calculates the area of a rectangle 
+
+
+function isEven(num :number):boolean{
+    if(num % 2 == 0){
+        return true
+    }
+    else{
+        return false
+    }
+
+}
+
+isEven(7);
