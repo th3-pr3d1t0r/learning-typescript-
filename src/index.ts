@@ -50,62 +50,67 @@
 // calculateTax(userIncome,userYear);
 
 
-function calculateRectangleArea(length:number , breadth:number):number{
-    let area = length * breadth
-    return  area;
+// function calculateRectangleArea(length:number , breadth:number):number{
+//     let area = length * breadth
+//     return  area;
 
-};
+// };
 
-calculateRectangleArea(5,4);// function calculates the area of a rectangle 
-
-
-function isEven(num :number):boolean{
-    if(num % 2 == 0){
-        return true
-    }
-    else{
-        return false
-    }
-
-}
-
-isEven(7);
+// calculateRectangleArea(5,4);// function calculates the area of a rectangle 
 
 
-function isValidPassword(password:string):boolean{
-    let hasUpperCase:boolean = false;
-    let hasLowerCase:boolean = false;
-    let hasNumber:boolean =false;
+// function isEven(num :number):boolean{
+//     if(num % 2 == 0){
+//         return true
+//     }
+//     else{
+//         return false
+//     }
+
+// }
+
+// isEven(7);
+
+
+// function isValidPassword(password:string):boolean{
+//     let hasUpperCase:boolean = false;
+//     let hasLowerCase:boolean = false;
+//     let hasNumber:boolean =false;
  
-    if(password.length>=8){
-       for(let i = 0 ; i<password.length; i++){
-            let char = password[i];
+//     if(password.length>=8){
+//        for(let i = 0 ; i<password.length; i++){
+//             let char = password[i];
            
             
-                //firat step check of the current value is a number or a letter 
-            if(/\d/.test(char) ){//now this will test if the character currently looping over is a number 
-                hasNumber = true;
-            }
-            else{
-                if(/[A-Z]/.test(char)){//to check if it is has uppercase letters 
-                    hasUpperCase =true;
+//                 //firat step check of the current value is a number or a letter 
+//             if(/\d/.test(char) ){//now this will test if the character currently looping over is a number 
+//                 hasNumber = true;
+//             }
+//             else{
+//                 if(/[A-Z]/.test(char)){//to check if it is has uppercase letters 
+//                     hasUpperCase =true;
 
-                }
-                if(/[a-z]/.test(char)){
-                    hasLowerCase = true;
-                }
-            }
-             if(hasLowerCase && hasNumber && hasUpperCase){
-               return true
-            }
-        }
+//                 }
+//                 if(/[a-z]/.test(char)){
+//                     hasLowerCase = true;
+//                 }
+//             }
+//              if(hasLowerCase && hasNumber && hasUpperCase){
+//                return true
+//             }
+//         }
 
-        return false
-    }
-    else{
-        return false;
-    }
+//         return false
+//     }
+//     else{
+//         return false;
+//     }
 
 
 
-}
+// }
+
+
+interface Product {id:number,name:string , price:number,category:string};
+
+function filterProductByCategory(product[],target)
