@@ -112,5 +112,20 @@
 
 
 interface Product {id:number,name:string , price:number,category:string};
+const allProducts: Product[] = [
+    { id: 1, name: "Laptop", price: 1200, category: "Electronics" },
+    { id: 2, name: "Keyboard", price: 75, category: "Electronics" },
+    { id: 3, name: "The Great Novel", price: 25, category: "Books" },
+    { id: 4, name: "T-Shirt", price: 20, category: "Clothing" },
+    { id: 5, name: "Mouse", price: 30, category: "Electronics" },
+    { id: 6, name: "Cookbook", price: 35, category: "Books" },
+];
 
-function filterProductByCategory(product[],target)
+function filterProductByCategory(products:Product[],targetCaegory:string):Product[]{
+    
+    let matchingProducts = products.filter((product) => product.category = targetCaegory)
+
+    return matchingProducts
+    
+
+}
