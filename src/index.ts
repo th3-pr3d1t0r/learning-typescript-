@@ -123,7 +123,7 @@ const allProducts: Product[] = [
 
 function filterProductByCategory(products:Product[],targetCaegory:string):Product[]{
     
-    let matchingProducts = products.filter((product) => product.category = targetCaegory)
+    let matchingProducts = products.filter((product) => product.category == targetCaegory)
 
     return matchingProducts
     
