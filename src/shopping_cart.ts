@@ -26,3 +26,5 @@ const shoppingCart2: CartItem[] = [
 ];
 
 const emptyShoppingCart: CartItem[] = [];
+
+

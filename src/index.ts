@@ -112,6 +112,20 @@
 
 
 interface Product {id:number,name:string , price:number,category:string};
+interface Category {
+    id: number;
+    name: string;
+    description: string;
+}
+
+interface DetailedProduct {
+    id: number;
+    name: string;
+    price: number;
+    categoryName: string;
+    categoryDescription: string;
+}
+
 const allProducts: Product[] = [
     { id: 1, name: "Laptop", price: 1200, category: "Electronics" },
     { id: 2, name: "Keyboard", price: 75, category: "Electronics" },
@@ -119,6 +133,12 @@ const allProducts: Product[] = [
     { id: 4, name: "T-Shirt", price: 20, category: "Clothing" },
     { id: 5, name: "Mouse", price: 30, category: "Electronics" },
     { id: 6, name: "Cookbook", price: 35, category: "Books" },
+];
+
+const sampleCategories: Category[] = [
+    { id: 101, name: "Electronics", description: "Gadgets and devices." },
+    { id: 102, name: "Books", description: "Written and published works." },
+    { id: 103, name: "Furniture", description: "Items for home and office decor." },
 ];
 
 function filterProductByCategory(products:Product[],targetCaegory:string):Product[]{
@@ -145,4 +165,24 @@ function updateProductprice(products:Product[],productId:number,newPrice:number)
     return products
 
     
+}
+
+function getProductDetails(products:Product[],categorys:Category[],productId:number) :DetailedProduct | null{
+    let correctProduct = products.find((product) => product.id == productId)
+    if(correctProduct == undefined){
+        return null
+    }
+    let correctCategry = categorys.find((category) => category.name == correctProduct.category)
+    if(correctCategry == undefined){
+        return null 
+    }
+    const detailedProduct :DetailedProduct={
+        id: correctProduct.id,
+        name: correctProduct.name,
+        price: correctProduct.price,
+        categoryName: correctCategry.name,
+        categoryDescription: correctCategry.description
+         }
+    return detailedProduct
+
 }
