@@ -129,3 +129,20 @@ function filterProductByCategory(products:Product[],targetCaegory:string):Produc
     
 
 }
+
+filterProductByCategory(allProducts,"Electronics");
+
+
+function updateProductprice(products:Product[],productId:number,newPrice:number):Product[]{
+
+    for(let product of products){
+         if(product.id == productId){
+            product.price =newPrice
+            break
+        }
+
+    }
+    return products
+
+    
+}
