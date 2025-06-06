@@ -186,3 +186,19 @@ function getProductDetails(products:Product[],categorys:Category[],productId:num
     return detailedProduct
 
 }
+
+getProductDetails(allProducts,sampleCategories,1);
+
+
+function deletProductById(products:Product[],productId:number):boolean{
+    let productExists :number = products.findIndex((product) => product.id == productId)
+    if(productExists == -1){
+        return false
+    }
+    else{
+        products.splice(productExists,1)
+    }
+
+    return true
+
+}
