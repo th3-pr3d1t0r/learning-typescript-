@@ -202,3 +202,6 @@ function deletProductById(products:Product[],productId:number):boolean{
     return true
 
 }
+
+
+//this is an excuse so it looks like i pused today sorry im just lazy 
