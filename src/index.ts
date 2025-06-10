@@ -111,7 +111,16 @@
 // }
 
 
-interface Product {id:number,name:string , price:number,category:string};
+interface Product {
+    id:number,
+    name:string , 
+    price:number,
+    category:string
+    status?:ProductStatus
+    quantity?:number
+
+
+};
 interface Category {
     id: number;
     name: string;
@@ -127,7 +136,7 @@ interface DetailedProduct {
 }
 
 const allProducts: Product[] = [
-    { id: 1, name: "Laptop", price: 1200, category: "Electronics" },
+    { id: 1, name: "Laptop", price: 1200, category: "Electronics" ,},
     { id: 2, name: "Keyboard", price: 75, category: "Electronics" },
     { id: 3, name: "The Great Novel", price: 25, category: "Books" },
     { id: 4, name: "T-Shirt", price: 20, category: "Clothing" },
@@ -203,5 +212,47 @@ function deletProductById(products:Product[],productId:number):boolean{
 
 }
 
+enum ProductStatus {
+    Available = "Available",
+    OutOfStock = "OutOfStock",
+    Discontinued = "Discontinued",
+}
 
-//this is an excuse so it looks like i pused today sorry im just lazy 
+interface NewProductInput {
+    name: string;
+    price: number;
+    category: string;
+    status?: ProductStatus; 
+    quantity?: number; 
+}
+
+function addNewProduct(products:Product[],newProductInput:NewProductInput):Product|null{
+    if(newProductInput.name === "" || newProductInput.price <= 0 || newProductInput.category === ""){
+        return null
+    }
+    let higherId:number = 0  
+    products.forEach(product => {
+        if(product.id > higherId){
+            higherId = product.id
+        }    
+    });
+    if(newProductInput.status === undefined){
+        newProductInput.status = ProductStatus.Available
+    }
+    if(newProductInput.quantity === undefined){
+        newProductInput.quantity = 0
+    }
+    let newProduct = {
+        id:higherId+1,
+        name: newProductInput.name,
+        price: newProductInput.price,
+        category: newProductInput.category,
+        status: newProductInput.status, 
+        quantity:newProductInput.quantity 
+        
+    }
+    products.push(newProduct);
+    return newProduct || null 
+
+}
+
