@@ -255,4 +255,23 @@ function addNewProduct(products:Product[],newProductInput:NewProductInput):Produ
     return newProduct || null 
 
 }
+interface User{
+    name:string,
+    id:number,
+    email:string
+}
 
+class UserService{
+    private users: User[];
+    constructor(usersArray:User[]){
+        this.users = usersArray
+    }
+    async getUserById(id:number) :Promise <User |null> {
+        await new Promise(resolve => setTimeout(resolve, 500));
+        let user =this.users.find((user) => user.id == id)
+        if(user == undefined){
+            return null
+        }
+        return user
+    }
+}
