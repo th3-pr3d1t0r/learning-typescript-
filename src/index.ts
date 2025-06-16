@@ -262,7 +262,7 @@ interface User{
 }
 
 class UserService{
-    private users: User[];
+    protected users: User[];
     constructor(usersArray:User[]){
         this.users = usersArray
     }
@@ -275,4 +275,27 @@ class UserService{
         return user
     }
 }
-//random feature
+class AdminUserService extends UserService{
+    constructor(usersArray:User[]){
+        super(usersArray)
+
+        
+        
+    }
+    async deleteUser(id:number) :Promise<boolean>{
+        await new Promise(resolve=>setTimeout(resolve,700));
+        let user =this.users.find((user) => user.id == id)
+          if(user === undefined){
+            return false
+        }
+        let position = this.users.indexOf(user)
+      
+        this.users.splice(position)
+        return true
+
+      
+        
+    }
+
+
+}
