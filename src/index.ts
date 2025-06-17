@@ -265,7 +265,7 @@ class UserService{
     protected users: User[];
     constructor(usersArray:User[]){
         this.users = usersArray
-    }
+    };
     async getUserById(id:number) :Promise <User |null> {
         await new Promise(resolve => setTimeout(resolve, 500));
         let user =this.users.find((user) => user.id == id)
@@ -290,7 +290,7 @@ class AdminUserService extends UserService{
         }
         let position = this.users.indexOf(user)
       
-        this.users.splice(position)
+        this.users.splice(position,1)
         return true
 
       

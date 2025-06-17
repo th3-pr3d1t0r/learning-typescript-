@@ -6,3 +6,6 @@ data types
 functions 
 interfaces 
 dynamic types 
+async functions
+generics 
+
