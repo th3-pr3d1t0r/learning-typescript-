@@ -13,8 +13,9 @@ interface user extends identifiable{
 
 class GenericsRepository<T extends identifiable>  {
     protected items :T[];
-    constructor(initialItems?:T[]){
+    constructor(initialIteclms?:T[]){
          let items
+         no real progress today but have to push
          
 
     } 
