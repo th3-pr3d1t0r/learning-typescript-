@@ -15,7 +15,7 @@ class GenericsRepository<T extends identifiable>  {
     protected items :T[];
     constructor(initialIteclms?:T[]){
          let items
-         no real progress today but have to push
+         
          
 
     } 
