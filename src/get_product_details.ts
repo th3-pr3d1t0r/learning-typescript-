@@ -13,9 +13,18 @@ interface user extends identifiable{
 
 class GenericsRepository<T extends identifiable>  {
     protected items :T[];
-    constructor(initialIteclms?:T[]){
-         let items
-         //
+    private  maxId = 1 
+    constructor(initialItems?:T[]){
+       
+        initialItems?.forEach( item => {if(item.id > this.maxId ){
+            this.maxId = item.id;
+
+        }})
+        let nextId = this.maxId + 1
+
+
+       
+        
          
 
     } 
