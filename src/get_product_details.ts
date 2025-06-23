@@ -21,13 +21,20 @@ class GenericsRepository<T extends identifiable>  {
 
         }})
         let nextId = this.maxId + 1
-
-
-       
         
-         
-
     } 
+    async findById(id:number):Promise<T | undefined>{
+        try{
+            await new Promise(resolve => setTimeout(resolve, 500));
+              let user = this.items.find(item => item.id == id)
+              return user
+           
+        }
+        catch(err: any){  
+            throw new Error(err.message || "there was an error!")
+        }
+    }
+
     
 
 }
