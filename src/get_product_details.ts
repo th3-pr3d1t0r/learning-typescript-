@@ -17,7 +17,7 @@ class GenericRepository<T extends Identifiable>  {
     constructor(initialItems?:T[]){
        if(initialItems && initialItems.length >0){
         this.items = initialItems;
-        
+
        }
         
     } 
@@ -46,7 +46,7 @@ class GenericRepository<T extends Identifiable>  {
     async add(item:Omit<T,'id'>):Promise<T[]>{
         await new Promise(resolve => setTimeout(resolve, 400));
         newItem = new item 
-        new array = this 
+        new array =
 
        
     }
