@@ -1,39 +1,56 @@
-interface identifiable {
+interface Identifiable {
     id:number;
 }
-interface product extends identifiable{
+interface Product extends Identifiable{
     name:string;
     price:number;
 
 }
-interface user extends identifiable{
+interface User extends Identifiable{
     name:string;
     email:string;
 }
 
-class GenericsRepository<T extends identifiable>  {
-    protected items :T[];
-    private  maxId = 1 
+class GenericRepository<T extends Identifiable>  {
+    protected items: T[] = [];
+    private  nextId = 1 
     constructor(initialItems?:T[]){
-       
-        initialItems?.forEach( item => {if(item.id > this.maxId ){
-            this.maxId = item.id;
-
-        }})
-        let nextId = this.maxId + 1
+       if(initialItems && initialItems.length >0){
+        this.items = initialItems;
+        
+       }
         
     } 
-    async findById(id:number):Promise<T | undefined>{
+    async findById(id:number):Promise<T | null>{
         try{
             await new Promise(resolve => setTimeout(resolve, 500));
-              let user = this.items.find(item => item.id == id)
-              return user
+            let user = this.items.find(item => item.id == id)
+            if(user == undefined){
+                return null
+              }
+            return user
            
         }
-        catch(err: any){  
-            throw new Error(err.message || "there was an error!")
+        catch(error){
+            console.log(error)  
+            return null
         }
     }
+    async findAll() :Promise<T[]>{
+       
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        return this.items
+        
+    }
+    async add(item:Omit<T,'id'>):Promise<T[]>{
+        await new Promise(resolve => setTimeout(resolve, 400));
+        newItem = new item 
+        new array = this 
+
+       
+    }
+    
 
     
 
