@@ -72,43 +72,43 @@
 // isEven(7);
 
 
-// function isValidPassword(password:string):boolean{
-//     let hasUpperCase:boolean = false;
-//     let hasLowerCase:boolean = false;
-//     let hasNumber:boolean =false;
+function isValidPassword(password:string):boolean{
+    let hasUpperCase:boolean = false;
+    let hasLowerCase:boolean = false;
+    let hasNumber:boolean =false;
  
-//     if(password.length>=8){
-//        for(let i = 0 ; i<password.length; i++){
-//             let char = password[i];
+    if(password.length>=8){
+       for(let i = 0 ; i<password.length; i++){
+            let char = password[i];
            
             
-//                 //firat step check of the current value is a number or a letter 
-//             if(/\d/.test(char) ){//now this will test if the character currently looping over is a number 
-//                 hasNumber = true;
-//             }
-//             else{
-//                 if(/[A-Z]/.test(char)){//to check if it is has uppercase letters 
-//                     hasUpperCase =true;
+                //firat step check of the current value is a number or a letter 
+            if(/\d/.test(char) ){//now this will test if the character currently looping over is a number 
+                hasNumber = true;
+            }
+            else{
+                if(/[A-Z]/.test(char)){//to check if it is has uppercase letters 
+                    hasUpperCase =true;
 
-//                 }
-//                 if(/[a-z]/.test(char)){
-//                     hasLowerCase = true;
-//                 }
-//             }
-//              if(hasLowerCase && hasNumber && hasUpperCase){
-//                return true
-//             }
-//         }
+                }
+                if(/[a-z]/.test(char)){
+                    hasLowerCase = true;
+                }
+            }
+             if(hasLowerCase && hasNumber && hasUpperCase){
+               return true
+            }
+        }
 
-//         return false
-//     }
-//     else{
-//         return false;
-//     }
+        return false
+    }
+    else{
+        return false;
+    }
 
 
 
-// }
+}
 
 
 interface Product {
